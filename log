@@ -100,3 +100,9 @@ hashmap.c:47:48: note: expected ‘char *’ but argument is of type ‘long int
    47 | long resolver_colisiones(HashMap * map, char * key){
       |                                         ~~~~~~~^~~
 0377aa3
+Fri Apr 17 06:44:16 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  3|5
+total_score: 10/60
+a732ef1

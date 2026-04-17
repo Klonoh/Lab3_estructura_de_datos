@@ -85,7 +85,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     } 
 
     else{
-        resolver_colisiones(map, pos);
+        resolver_colisiones(map, key);
         
         map->buckets[pos] = nuevo;
         map->size++;
