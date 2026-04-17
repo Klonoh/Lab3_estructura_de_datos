@@ -44,7 +44,8 @@ int is_equal(void* key1, void* key2){
 // Esta función crea una variable de tipo HashMap, inicializa el arreglo de buckets con casillas nulas, inicializa el resto de variables y retorna el mapa. 
 // Inicialice el índice current a -1.
 
-long resolver_colisiones(HashMap * map, long pos){
+long resolver_colisiones(HashMap * map, char * key){
+    long pos = hash(key, map->capacity);
     while(map->buckets[pos] != NULL && map->buckets[pos]->key != NULL){
         pos++;
         if(pos >= map->capacity) pos = 0;
