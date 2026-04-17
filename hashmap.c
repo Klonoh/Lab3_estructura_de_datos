@@ -110,7 +110,12 @@ Pair * searchMap(HashMap * map,  char * key) {
         return map->buckets[pos];
     }
     else{
-        pos = resolver_colisiones(map, key);
+        while(is_equal(key, map->buckets[pos]->key) == 0){
+            pos++;
+            if(map->buckets[pos] == NULL || map->buckets[pos]->key == NULL) return NULL;
+            if(pos >= map->capacity) pos = 0;
+        }
+        return map->buckets[pos];
     }
 
 
