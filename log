@@ -12,3 +12,9 @@ hashmap.c:49:28: error: void value not ignored as it ought to be
    49 |     if(new == NULL) return exit(0);
       |                            ^~~~~~~
 81104b1
+Fri Apr 17 06:06:53 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|7
+total_score: 0/60
+293a9a3
