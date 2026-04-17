@@ -44,11 +44,6 @@ int is_equal(void* key1, void* key2){
 // Esta función crea una variable de tipo HashMap, inicializa el arreglo de buckets con casillas nulas, inicializa el resto de variables y retorna el mapa. 
 // Inicialice el índice current a -1.
 
-long resolver_colisiones(HashMap * map, char * key){
-    long pos = hash(key, map->capacity);
-    
-    return pos;
-}
 HashMap * createMap(long capacity) {
     HashMap *new = malloc(sizeof(HashMap));
     if(new == NULL) exit(0);
@@ -110,6 +105,7 @@ Pair * searchMap(HashMap * map,  char * key) {
         map->current = pos;
         return map->buckets[pos];
     }
+        
     else{
         while(is_equal(key, map->buckets[pos]->key) == 0){
             pos++;
@@ -119,8 +115,6 @@ Pair * searchMap(HashMap * map,  char * key) {
         map->current = pos;
         return map->buckets[pos];
     }
-
-
 
     return map->buckets[pos];
 }
