@@ -24,3 +24,14 @@ Fri Apr 17 06:07:29 PM UTC 2026:
  tests:  1|6
 total_score: 5/60
 0e8bc49
+Fri Apr 17 06:15:23 PM UTC 2026: 
+ hashmap.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:75:31: error: comparison between pointer and integer [-Werror]
+   75 |     if(map->buckets[pos]->key == -1) map->buckets[pos] = nuevo;
+      |                               ^~
+cc1: all warnings being treated as errors
+ef7f8c8
