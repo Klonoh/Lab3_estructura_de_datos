@@ -147,7 +147,7 @@ Pair * firstMap(HashMap * map) {
             return map->buckets[pos];
         }
     }
-    map->current = pos-1;
+    map->current = map->capacity - 1;
     return NULL;
 }
 
