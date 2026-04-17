@@ -112,3 +112,13 @@ Fri Apr 17 06:46:47 PM UTC 2026:
  tests:  3|5
 total_score: 10/60
 182850a
+Fri Apr 17 06:47:53 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:118:12: error: returning ‘long int’ from a function with return type ‘Pair *’ makes pointer from integer without a cast [-Wint-conversion]
+  118 |     return pos;
+      |            ^~~
+b52aac6

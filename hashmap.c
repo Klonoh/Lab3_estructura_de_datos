@@ -110,12 +110,12 @@ Pair * searchMap(HashMap * map,  char * key) {
         return map->buckets[pos];
     }
     else{
-        
+        pos = resolver_colisiones(map, key);
     }
 
 
 
-    return NULL;
+    return pos;
 }
 
 // 4. Implemente la función void eraseMap(HashMap * map, char * key). 
