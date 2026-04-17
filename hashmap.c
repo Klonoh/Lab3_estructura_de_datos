@@ -129,7 +129,7 @@ void eraseMap(HashMap * map,  char * key) {
     if(map == NULL) return;
     Pair *buscado = searchMap(map, key);
     if(buscado == NULL) return;
-    buscado->key == NULL;
+    buscado->key = NULL;
     map->size--;
     
 }
