@@ -46,10 +46,7 @@ int is_equal(void* key1, void* key2){
 
 long resolver_colisiones(HashMap * map, char * key){
     long pos = hash(key, map->capacity);
-    while(map->buckets[pos] != NULL && map->buckets[pos]->key != NULL){
-        pos++;
-        if(pos >= map->capacity) pos = 0;
-    }
+    
     return pos;
 }
 HashMap * createMap(long capacity) {
@@ -85,7 +82,10 @@ void insertMap(HashMap * map, char * key, void * value) {
     } 
 
     else{
-        resolver_colisiones(map, key);
+        while(map->buckets[pos] != NULL && map->buckets[pos]->key != NULL){
+            pos++;
+            if(pos >= map->capacity) pos = 0;
+        }
         
         map->buckets[pos] = nuevo;
         map->size++;
