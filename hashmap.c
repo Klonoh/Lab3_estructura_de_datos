@@ -72,7 +72,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     Pair *nuevo = createPair(key, value);
     
     if(map->buckets[pos] == NULL) map->buckets[pos] = nuevo;
-    if(map->buckets[pos]->key == -1) map->buckets[pos] = nuevo;
+    if(map->buckets[pos]->key == NULL) map->buckets[pos] = nuevo;
     
 
 }
