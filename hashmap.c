@@ -90,7 +90,6 @@ void insertMap(HashMap * map, char * key, void * value) {
 
     map->current = pos;
 
-    if(map->size >= map->capacity * 0.7) enlarge(map);
 }
 
 // 3. Implemente la función Pair * searchMap(HashMap * map, char * key), la cual retorna el Pair asociado a la clave ingresada. 
