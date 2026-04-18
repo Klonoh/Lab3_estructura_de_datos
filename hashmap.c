@@ -48,7 +48,7 @@ HashMap * createMap(long capacity) {
     HashMap *new = malloc(sizeof(HashMap));
     if(new == NULL) exit(0);
     
-    new->buckets = calloc(capacity, sizeof(HashMap));
+    new->buckets = calloc(capacity, sizeof(Pair*));
     if(new->buckets == NULL) exit(0);
     
     new->size = 0;
@@ -101,22 +101,27 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 Pair * searchMap(HashMap * map,  char * key) {  
     if(map == NULL) return NULL;
+    
     long pos = hash(key, map->capacity);
+    
     if(is_equal(key, map->buckets[pos]->key) == 1){
         map->current = pos;
         return map->buckets[pos];
     }
         
-    else{
-        while(is_equal(key, map->buckets[pos]->key) == 0){
-            pos++;
-            if(map->buckets[pos] == NULL || map->buckets[pos]->key == NULL) return NULL;
-            if(pos >= map->capacity) pos = 0;
+    
+    while(map->buckets[pos] != NULL){
+        if(map->buckets[pos]->key != NULL && is_equal(key, map->buckets[pos]->key)){
+            map->current = pos;
+            return map->buckets[pos];
         }
-        map->current = pos;
-        return map->buckets[pos];
+        pos++;
+        if(pos >= map->capacity) pos = 0;
     }
-    return map->buckets[pos];
+
+    return NULL;
+    
+
 }
 
 // 4. Implemente la función void eraseMap(HashMap * map, char * key). 
@@ -184,7 +189,7 @@ void enlarge(HashMap * map) {
     
     Pair ** old_buckets = map->buckets;
     
-    map->buckets = calloc(map->capacity * 2, sizeof(HashMap));
+    map->buckets = calloc(map->capacity * 2, sizeof(Pair));
     if(map->buckets == NULL) exit(0);
     
     map->size = 0;
