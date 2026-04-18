@@ -254,3 +254,14 @@ Fri Apr 17 11:47:40 PM UTC 2026:
  tests:  16|1
 total_score: 50/60
 123f052
+Sat Apr 18 12:03:10 AM UTC 2026: 
+ hashmap.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:192:13: error: implicit declaration of function ‘insert’; did you mean ‘insertMap’? [-Wimplicit-function-declaration]
+  192 |             insert(map, old_buckets[i]->key, old_buckets[i]->value);
+      |             ^~~~~~
+      |             insertMap
+5eb7873
